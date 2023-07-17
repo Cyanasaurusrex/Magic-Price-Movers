@@ -1,21 +1,4 @@
-const button = document.getElementById('button')
-button.addEventListener('click', function(event) {
-    event.preventDefault()
-    getCards()
-})
-
-
-
-
-async function getCards() {
-    const response = await fetch('https://api.scryfall.com/catalog/land-types')
-    const data = await response.json()
-    console.log(data)
-    
-}
-
-
-// TrieNode represents a node in the Trie
+// / TrieNode represents a node in the Trie
 class TrieNode {
     constructor() {
       this.children = new Map();
