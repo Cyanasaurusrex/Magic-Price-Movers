@@ -87,6 +87,7 @@ fetch('cardArray.json')
       for (const suggestion of suggestions) {
         const suggestionElement = document.createElement('div');
         suggestionElement.textContent = suggestion;
+        suggestionElement.className = "suggestions"
         autocompleteDiv.appendChild(suggestionElement);
       }
     }
