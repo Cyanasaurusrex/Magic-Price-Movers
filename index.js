@@ -74,9 +74,23 @@ fetch("cardArray.json")
 
     // Handle input event
     function handleInput() {
-      const input = textarea.value.trim();
-      const suggestions = trie.getAutocompleteSuggestions(input);
+      const result = capitalizeWords(textarea.value.trim())
+      const suggestions = trie.getAutocompleteSuggestions(result);
       displayAutocompleteSuggestions(suggestions);
+    }
+
+    function capitalizeWords(input) {
+      const words = input.split(' ');
+
+      // Capitalize the first letter of each word
+      const capitalizedWords = words.map(word => {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+  });
+
+  // Join the modified array back into a string
+  const capitalizedString = capitalizedWords.join(' ');
+
+  return capitalizedString;
     }
 
     // Display autocomplete suggestions
